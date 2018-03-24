@@ -1,0 +1,2 @@
+servicename:TableSyncService
+classfullname:tgtools.tablesync.service.TableSyncService

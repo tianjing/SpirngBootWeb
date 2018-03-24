@@ -1,0 +1,140 @@
+2018-03-23 16:01:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 16:01:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 16:01:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 16:12:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""ACT_ID_USER""
+(
+""ID_"" VARCHAR(64) NOT NULL,
+""REV_"" DEC(22,6),
+""FIRST_"" VARCHAR(64),
+""LAST_"" VARCHAR(64),
+""PWD_"" VARCHAR(64),
+""CREATE_TIME"" TIMESTAMP(6),
+""STATE_"" VARCHAR(32),
+NOT[*] CLUSTER PRIMARY KEY(""ID_""))"; expected "identifier"; SQL statement:
+CREATE TABLE "ACT_ID_USER"
+(
+"ID_" VARCHAR(64) NOT NULL,
+"REV_" DEC(22,6),
+"FIRST_" VARCHAR(64),
+"LAST_" VARCHAR(64),
+"PWD_" VARCHAR(64),
+"CREATE_TIME" TIMESTAMP(6),
+"STATE_" VARCHAR(32),
+NOT CLUSTER PRIMARY KEY("ID_")) [42001-195]
+2018-03-23 16:12:25 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 16:12:25 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 16:12:25 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 16:12:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 16:12:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 16:12:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 16:59:52 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_USER" already exists; SQL statement:
+create table ACT_ID_USER (
+    ID_ varchar(64),
+    REV_ integer,
+    FIRST_ varchar(255),
+    LAST_ varchar(255),
+    EMAIL_ varchar(255),
+    PWD_ varchar(255),
+    PICTURE_ID_ varchar(64),
+    primary key (ID_)
+) [42101-195]
+2018-03-23 17:00:02 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_GROUP" already exists; SQL statement:
+create table ACT_ID_GROUP (
+    ID_ varchar(64),
+    REV_ integer,
+    NAME_ varchar(255),
+    TYPE_ varchar(255),
+    primary key (ID_)
+) [42101-195]
+2018-03-23 17:00:02 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_MEMBERSHIP" already exists; SQL statement:
+create table ACT_ID_MEMBERSHIP (
+    USER_ID_ varchar(64),
+    GROUP_ID_ varchar(64),
+    primary key (USER_ID_, GROUP_ID_)
+) [42101-195]
+2018-03-23 17:00:02 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_INFO" already exists; SQL statement:
+create table ACT_ID_INFO (
+    ID_ varchar(64),
+    REV_ integer,
+    USER_ID_ varchar(64),
+    TYPE_ varchar(64),
+    KEY_ varchar(255),
+    VALUE_ varchar(255),
+    PASSWORD_ longvarbinary,
+    PARENT_ID_ varchar(255),
+    primary key (ID_)
+) [42101-195]
+2018-03-23 17:00:02 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Constraint "ACT_FK_MEMB_GROUP" already exists; SQL statement:
+alter table ACT_ID_MEMBERSHIP
+    add constraint ACT_FK_MEMB_GROUP
+    foreign key (GROUP_ID_)
+    references ACT_ID_GROUP [90045-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:109)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:77)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101)
+	at org.h2.command.Command.executeUpdate(Command.java:260)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:193)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at sun.reflect.GeneratedMethodAccessor61.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.onseven.dbvis.g.B.B.ā(Z:2186)
+	at com.onseven.dbvis.g.B.F$A.call(Z:1369)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-03-23 17:00:02 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Constraint "ACT_FK_MEMB_USER" already exists; SQL statement:
+alter table ACT_ID_MEMBERSHIP
+    add constraint ACT_FK_MEMB_USER
+    foreign key (USER_ID_)
+    references ACT_ID_USER [90045-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:109)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:77)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101)
+	at org.h2.command.Command.executeUpdate(Command.java:260)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:193)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at sun.reflect.GeneratedMethodAccessor61.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.onseven.dbvis.g.B.B.ā(Z:2186)
+	at com.onseven.dbvis.g.B.F$A.call(Z:1369)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-03-23 17:02:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 17:02:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 17:02:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 17:02:04 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 17:02:04 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]
+2018-03-23 17:02:04 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-195]

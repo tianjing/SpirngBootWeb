@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <tableinfo><!--同步表信息 可配置多个-->
+        <SourceTableName>MW_APP.MWT_UD_SB_FDJ</SourceTableName>
+        <SourceDataSource>DBCP1</SourceDataSource>
+
+        <TargetTableName>NF_APP.MWT_UD_SB_FDJ</TargetTableName>
+        <TargetDataSource>DBCP2</TargetDataSource>
+
+        <Interval></Interval><!--默认间隔1秒-->
+        <Sql>select OBJ_ID ,OBJ_DISPIDX,SSGC from MWT_UD_SB_FDJ</Sql><!--自定义sql ，默认获取所有数据-->
+
+        <PrimaryKeys><!--主键-->
+            <key>OBJ_ID</key>
+        </PrimaryKeys>
+    </tableinfo>
+    <UseMultiThreading>false</UseMultiThreading><!--是否启用多线程，一个线程同步一张表-->
+</Config>

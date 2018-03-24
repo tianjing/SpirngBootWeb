@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <!--解析基本顺序是 移动文件 FTP下载文件  解析文件。其中移动文件和下载文件配置不是必须 -->
+    <!--将指定目录的文件移动到解析目录 -->
+    <SourceDir></SourceDir>
+    <TargetDir></TargetDir>
+
+    <!--下载FTP的文件到解析目录 -->
+    <ftp_type></ftp_type><!-- sftp,ftp -->
+    <ftp_ip>172.23.67.240</ftp_ip><!-- 172.17.12.1 -->
+    <ftp_port>21</ftp_port><!-- 1234 -->
+    <ftp_username>xzpw</ftp_username><!-- WZXMGL -->
+    <ftp_password>Xzpw123!</ftp_password><!-- wzxmgl#12! -->
+    <ftp_path></ftp_path><!-- / -->
+
+    <!--使用的数据源(如：SpringDataSource); 不写使用默认  -->
+    <DataSource></DataSource>
+    <!--多少sql加一个线程 <=1为单线程  -->
+    <SqlThread>0</SqlThread>
+    <!--是否开启文件线程，一个文件一个线程，如果是2 可以理解为一次解析2个文件  -->
+    <FileThread>2</FileThread>
+</Config>
