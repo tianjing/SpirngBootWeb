@@ -203,7 +203,7 @@
         <dependency>
             <groupId>com.github.tianjing</groupId>
             <artifactId>tgtools.activiti.dm</artifactId>
-            <version>5.22.0.3</version>
+            <version>5.22.0.4</version>
         </dependency>
         <!--tgtools activiti 达梦兼容包 结束 -->
         <!--tgtools activiti 达梦建模 开始 -->
