@@ -3,6 +3,8 @@ package tgtools.spirngbootweb.demo.mybatis.db2;
 
 import tk.mybatis.mapper.common.Mapper;
 
+import java.util.List;
+
 /**
  * @author 田径
  * @Title
@@ -12,4 +14,5 @@ import tk.mybatis.mapper.common.Mapper;
 
 public interface UserDao extends Mapper<UserDo> {
 
+    List<UserDo> lista();
 }

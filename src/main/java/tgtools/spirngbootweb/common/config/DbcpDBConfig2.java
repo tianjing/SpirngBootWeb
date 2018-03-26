@@ -82,7 +82,7 @@ public class DbcpDBConfig2 {
     public SqlSessionFactory sqlSessionFactory2(@Qualifier("dataSource2") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
-        factoryBean.setMapperLocations(new Resource[]{ new UrlResource(org.springframework.util.ResourceUtils.getURL("classpath:mybatis/dm6/UserMapper.xml"))});
+        factoryBean.setMapperLocations(new Resource[]{ new UrlResource(org.springframework.util.ResourceUtils.getURL("classpath:mybatis/db2/UserMapper.xml"))});
         return factoryBean.getObject();
 
     }

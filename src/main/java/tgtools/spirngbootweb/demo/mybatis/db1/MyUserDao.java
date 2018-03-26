@@ -15,4 +15,6 @@ import java.util.List;
 public interface MyUserDao extends Mapper<MyUserDo> {
     @SelectProvider(type=MyUserDo.class,method = "pageSql")
     List<MyUserDo> pageSql(int pPageIndex, int pPageSize);
+
+    List<MyUserDo> lista();
 }

@@ -33,8 +33,8 @@ public class SpirngBootWebApplication {
 		MyUserDao dUserDao=(MyUserDao)tgtools.web.platform.Platform.getBean("myUserDao");
 
 		UserDao userDao=(UserDao)tgtools.web.platform.Platform.getBean("userDao");
-		List<UserDo> res1= userDao.selectAll();
-		List<MyUserDo> res2=dUserDao.selectAll();
+		List<UserDo> res1= userDao.lista();
+		List<MyUserDo> res2=dUserDao.lista();//.selectAll();
 		System.out.println("res1:"+res1.size());
 		System.out.println("res2:"+res2.size());
 
