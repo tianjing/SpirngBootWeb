@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class LogAspect {
-    @Pointcut("execution(public * tgtools.spirngbootweb.demo.mybatis.db1.MyUserDao.selectAll(..))")
+    @Pointcut("execution(public * tgtools.spirngbootweb.demo.mybatis.db1.MyUserDao.*(..))")
     public void webLog() {
     }
 
