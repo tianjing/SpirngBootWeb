@@ -23,6 +23,7 @@ public class SpirngBootWebApplication {
 		} catch (APPErrorException e) {
 			e.printStackTrace();
 		}
+		tgtools.util.LogHelper.info("","fdsafdasfdsa","main");
 		testDao();
 	}
 	private static void testDao()
