@@ -1,18 +1,19 @@
 package tgtools.spirngbootweb.common.config;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
 /**
+ * 常规WebSocket 启动方式
+ * 现已被 TgtoolsConfig 替代
  * @author 田径
  * @Title
  * @Description
  * @date 9:04
  */
-@Configuration
-@EnableWebSocket
+//@Configuration
+//@EnableWebSocket
+@Deprecated
 public class WebSocketConfig implements WebSocketConfigurer {
     /**
      * {@inheritDoc}

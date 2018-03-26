@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import tgtools.log.LoggerFactory;
 import tgtools.message.MessageFactory;
 import tgtools.web.log.Log4jFactory;
@@ -23,6 +24,7 @@ import java.net.URL;
  * @date 8:54
  */
 @Configuration
+@EnableWebSocket
 public class TgtoolsConfig {
 
     @Autowired
