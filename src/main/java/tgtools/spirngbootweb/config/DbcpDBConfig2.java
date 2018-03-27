@@ -22,9 +22,18 @@ import java.sql.SQLException;
  */
 
 @Configuration
-@MapperScan(basePackages = {"tgtools.spirngbootweb.demo.mybatis.db2"}, sqlSessionFactoryRef = "sqlSessionFactory2" )
 public class DbcpDBConfig2 {
     private Logger logger = LoggerFactory.getLogger(DbcpDBConfig2.class);
+
+    @Bean
+    public tk.mybatis.spring.mapper.MapperScannerConfigurer mapperScannerConfigurer2()
+    {
+        tk.mybatis.spring.mapper.MapperScannerConfigurer dd =new tk.mybatis.spring.mapper.MapperScannerConfigurer();
+        dd.setBasePackage("tgtools.spirngbootweb.demo.mybatis.db2");
+        dd.setSqlSessionFactoryBeanName("sqlSessionFactory2");
+        return dd;
+    }
+
 
     @Bean(initMethod = "init", destroyMethod = "close")   //声明其为Bean实例
     public DataSource dataSource2() {
