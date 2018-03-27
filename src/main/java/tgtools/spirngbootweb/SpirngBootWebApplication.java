@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import tgtools.data.DataTable;
 import tgtools.exceptions.APPErrorException;
 import tgtools.spirngbootweb.demo.mybatis.db1.MyUserDao;
-import tgtools.spirngbootweb.demo.mybatis.db1.MyUserDo;
+import tgtools.spirngbootweb.demo.mybatis.db1.MyUserDO;
 import tgtools.spirngbootweb.demo.mybatis.db2.UserDao;
-import tgtools.spirngbootweb.demo.mybatis.db2.UserDo;
+import tgtools.spirngbootweb.demo.mybatis.db2.UserDO;
 
 import java.util.List;
 
@@ -33,8 +33,8 @@ public class SpirngBootWebApplication {
 		MyUserDao dUserDao=(MyUserDao)tgtools.web.platform.Platform.getBean("myUserDao");
 
 		UserDao userDao=(UserDao)tgtools.web.platform.Platform.getBean("userDao");
-		List<UserDo> res1= userDao.lista();
-		List<MyUserDo> res2=dUserDao.lista();
+		List<UserDO> res1= userDao.lista();
+		List<MyUserDO> res2=dUserDao.lista();
 		System.out.println("res1:"+res1.size());
 		System.out.println("res2:"+res2.size());
 

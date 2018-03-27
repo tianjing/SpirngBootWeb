@@ -1,6 +1,6 @@
 package tgtools.spirngbootweb.demo.bo;
 
-import tgtools.spirngbootweb.demo.mybatis.db1.MyUserDo;
+import tgtools.spirngbootweb.demo.mybatis.db1.MyUserDO;
 
 import java.util.Set;
 
@@ -11,15 +11,15 @@ import java.util.Set;
  * @date 12:43
  */
 public class UserBO {
-    private MyUserDo mUser;
+    private MyUserDO mUser;
     private Set<String> mRole;
 
 
-    public MyUserDo getUser() {
+    public MyUserDO getUser() {
         return mUser;
     }
 
-    public void setUser(MyUserDo pUser) {
+    public void setUser(MyUserDO pUser) {
         mUser = pUser;
     }
 

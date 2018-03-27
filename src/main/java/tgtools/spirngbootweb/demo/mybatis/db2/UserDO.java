@@ -12,6 +12,6 @@ import javax.persistence.Table;
  * @date 8:54
  */
 @Table(name = "ACT_ID_USER")
-public class UserDo extends BaseModel {
+public class UserDO extends BaseModel {
 
 }

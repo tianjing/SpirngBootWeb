@@ -12,9 +12,9 @@ import java.util.List;
  * @Description
  * @date 8:54
  */
-public interface MyUserDao extends Mapper<MyUserDo> {
-    @SelectProvider(type=MyUserDo.class,method = "pageSql")
-    List<MyUserDo> pageSql(int pPageIndex, int pPageSize);
+public interface MyUserDao extends Mapper<MyUserDO> {
+    @SelectProvider(type=MyUserDO.class,method = "pageSql")
+    List<MyUserDO> pageSql(int pPageIndex, int pPageSize);
 
-    List<MyUserDo> lista();
+    List<MyUserDO> lista();
 }

@@ -3,7 +3,7 @@
 
 <mapper namespace="tgtools.spirngbootweb.demo.mybatis.db2.UserDao">
 
-	<select id="lista" resultType="tgtools.spirngbootweb.demo.mybatis.db2.UserDo">
+	<select id="lista" resultType="tgtools.spirngbootweb.demo.mybatis.db2.UserDO">
 	select ID_ id from act_id_user
 	</select>
 	

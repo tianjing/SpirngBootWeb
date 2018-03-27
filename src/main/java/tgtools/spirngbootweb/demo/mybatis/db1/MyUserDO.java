@@ -12,7 +12,7 @@ import javax.persistence.Table;
  * @date 8:54
  */
 @Table(name = "ACT_ID_USER")
-public class MyUserDo extends BaseModel {
+public class MyUserDO extends BaseModel {
     @Column(name="FIRST_")
     private String mUserName;
     @Column(name="PWD_")

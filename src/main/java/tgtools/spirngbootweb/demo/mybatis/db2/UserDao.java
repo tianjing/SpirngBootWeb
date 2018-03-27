@@ -12,7 +12,7 @@ import java.util.List;
  * @date 8:54
  */
 
-public interface UserDao extends Mapper<UserDo> {
+public interface UserDao extends Mapper<UserDO> {
 
-    List<UserDo> lista();
+    List<UserDO> lista();
 }

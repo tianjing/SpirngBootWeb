@@ -4,9 +4,12 @@ import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Service;
 import tgtools.exceptions.APPErrorException;
 import tgtools.spirngbootweb.demo.bo.UserBO;
-import tgtools.spirngbootweb.demo.mybatis.db1.MyUserDo;
+import tgtools.spirngbootweb.demo.mybatis.db1.MyUserDao;
+import tgtools.spirngbootweb.demo.mybatis.db1.MyUserDO;
 import tgtools.spirngbootweb.demo.shiro.UsernameToken;
 import tgtools.util.DateUtil;
+import tgtools.web.develop.model.BaseModel;
+import tgtools.web.develop.service.AbstractService;
 import tgtools.web.develop.service.UserService;
 
 import java.util.HashSet;
@@ -18,7 +21,7 @@ import java.util.HashSet;
  * @date 11:54
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends AbstractService<MyUserDao> implements UserService {
 
 
     @Override
@@ -55,7 +58,7 @@ public class UserServiceImpl implements UserService {
      */
     public UserBO validSysLoginUser(String pUser, String pPassword) throws APPErrorException {
         UserBO user = new UserBO();
-        MyUserDo u=new MyUserDo();
+        MyUserDO u=new MyUserDO();
         u.setId("1");
         u.setRev(1L);
         u.setUserName("admin");
@@ -78,5 +81,10 @@ public class UserServiceImpl implements UserService {
     public UserBO getUser()
     {
         return (UserBO)SecurityUtils.getSubject().getPrincipal();
+    }
+
+    @Override
+    public BaseModel createModel() {
+        return new MyUserDO();
     }
 }
