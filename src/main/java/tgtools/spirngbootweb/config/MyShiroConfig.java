@@ -1,4 +1,4 @@
-package tgtools.spirngbootweb.demo.config;
+package tgtools.spirngbootweb.config;
 
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.mgt.SecurityManager;
