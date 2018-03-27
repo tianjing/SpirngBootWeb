@@ -1,4 +1,4 @@
-package tgtools.spirngbootweb.task;
+package tgtools.spirngbootweb.demo.task;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;

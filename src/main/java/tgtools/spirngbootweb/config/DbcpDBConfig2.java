@@ -1,4 +1,4 @@
-package tgtools.spirngbootweb.common.config;
+package tgtools.spirngbootweb.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;

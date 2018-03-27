@@ -1,4 +1,4 @@
-package tgtools.spirngbootweb.common.config;
+package tgtools.spirngbootweb.config;
 
 
 import org.mybatis.spring.annotation.MapperScan;

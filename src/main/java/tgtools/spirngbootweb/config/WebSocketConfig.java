@@ -1,4 +1,4 @@
-package tgtools.spirngbootweb.common.config;
+package tgtools.spirngbootweb.config;
 
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;

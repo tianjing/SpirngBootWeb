@@ -218,6 +218,12 @@
             <artifactId>tgtools.web</artifactId>
             <version>1.0.329</version>
         </dependency>
+        <!--tgtools develop 开发套路 开始 -->
+        <dependency>
+            <groupId>com.github.tianjing</groupId>
+            <artifactId>tgtools.web.develop</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
         <!--tgtools activiti 达梦兼容包 开始 -->
         <dependency>
             <groupId>com.github.tianjing</groupId>

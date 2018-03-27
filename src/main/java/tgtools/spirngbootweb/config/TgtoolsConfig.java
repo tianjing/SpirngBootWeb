@@ -1,4 +1,4 @@
-package tgtools.spirngbootweb.common.config;
+package tgtools.spirngbootweb.config;
 
 import net.sf.ehcache.CacheManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import tgtools.log.LoggerFactory;
 import tgtools.message.MessageFactory;
@@ -25,7 +26,7 @@ import java.net.URL;
  */
 @Configuration
 @EnableWebSocket
-public class TgtoolsConfig {
+public class TgtoolsConfig  {
 
     @Autowired
     ApplicationContext applicationContext;
