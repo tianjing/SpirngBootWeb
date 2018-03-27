@@ -51,14 +51,11 @@
     <appender name="asyncjdbc" class="org.apache.log4j.AsyncAppender">
         <appender-ref ref="jdbc"/>
     </appender>
-    <!--<logger name="org.activiti.engine.impl.db.DbSqlSession" >-->
-    <!--<level value="debug"/>-->
-    <!--<appender-ref ref="stdout" />-->
+    <!-- 包含输出日志 范围-->
+    <!--<logger name="tgtools.spirngbootweb.demo.mybatis" >-->
+        <!--<level value="debug"/>-->
+        <!--<appender-ref ref="stdout" />-->
     <!--</logger>-->
-
-    <logger name="org.activiti.engine.impl.persistence.entity" >
-        <level value="debug" />
-    </logger>
 
     <root>
         <priority value="info" />
