@@ -1,4 +1,4 @@
-package tgtools.spirngbootweb.aspect;
+package tgtools.spirngbootweb.demo.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;

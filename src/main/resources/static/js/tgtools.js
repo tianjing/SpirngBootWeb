@@ -18,8 +18,8 @@ tgtools.util.StringUtil = {};
 tgtools.util.StringUtil.isNotEmpty = function (str) {
     return undefined != str && null != str && "" != str;
 };
-/** @namespace tgtools.util.net */
-tgtools.util.net = {};
+/** @namespace tgtools.util.URL */
+tgtools.util.url = {};
 /**
  * 获取当前项目路径
  * @function getURL
@@ -27,7 +27,7 @@ tgtools.util.net = {};
  * @static
  * @returns {string} 如：http://www.abc.com/EmptyProject
  */
-tgtools.util.net.getURL = function () {
+tgtools.util.url.getURL = function () {
 
     var curWwwPath = window.document.location.href;
     //获取主机地址之后的目录，如： cis/website/meun.htm
@@ -38,8 +38,6 @@ tgtools.util.net.getURL = function () {
     var rootPath = localhostPaht + projectName;
     return rootPath;
 };
-/** @namespace tgtools.util.URL */
-tgtools.util.URL = {};
 /**
  * 通过输入的参数名称获取URL的参数
  * @function getQueryString
@@ -48,7 +46,7 @@ tgtools.util.URL = {};
  * @param {String} name 参数名称
  * @returns {string} 返回参数值，如果没有则返回null
  */
-tgtools.util.URL.getQueryString = function (name) {
+tgtools.util.url.getQueryString = function (name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     var r = window.location.search.substr(1).match(reg);
     if (r != null)
@@ -57,6 +55,34 @@ tgtools.util.URL.getQueryString = function (name) {
 };
 /** @namespace tgtools.net */
 tgtools.net = {};
+
+tgtools.net.getAjaxData = function (url, data1) {
+    return tgtools.net.ajaxData("get", url, data1);
+};
+tgtools.net.postAjaxData = function (url, data1) {
+    return tgtools.net.ajaxData("post", url, data1);
+};
+tgtools.net.putAjaxData = function (url, data1) {
+    return tgtools.net.ajaxData("put", url, data1);
+};
+tgtools.net.deleteAjaxData = function (url, data1) {
+    return tgtools.net.ajaxData("delete", url, data1);
+};
+
+tgtools.net.getAsyncAjaxData = function (url, data1, success) {
+    return tgtools.net.asyncAjaxData("get", url, data1, success);
+};
+tgtools.net.postAsyncAjaxData = function (url, data1, success) {
+    return tgtools.net.asyncAjaxData("post", url, data1, success);
+};
+tgtools.net.putAsyncAjaxData = function (url, data1, success) {
+    return tgtools.net.asyncAjaxData("put", url, data1, success);
+};
+tgtools.net.deleteAsyncAjaxData = function (url, data1, success) {
+    return tgtools.net.asyncAjaxData("delete", url, data1, success);
+};
+
+
 /**
  * 异步ajax请求
  * @function asyncAjaxData
@@ -66,21 +92,21 @@ tgtools.net = {};
  * @param {json} data1 请求的json数据
  * @param {function}success 成功后回调函数
  */
-tgtools.net.asyncAjaxData = function (method,url, data1,success) {
+tgtools.net.asyncAjaxData = function (method, url, data1, success) {
     var res = null;
-    var messageid=null;
-    if('undefined'!=typeof mini){
+    var messageid = null;
+    if ('undefined' != typeof mini) {
         messageid = mini.loading("处理中请等待", "Loading");
     }
-    tgtools.net.rest.ajaxJson(method,url, data1, function (data) {
-        if('undefined'!=typeof mini) {
+    tgtools.net.rest.ajaxJson(method, url, data1, function (data) {
+        if ('undefined' != typeof mini) {
             mini.hideMessageBox(messageid);
         }
         if ("function" == typeof (success)) {
             success(data);
         }
     }, function (error) {
-        if('undefined'!=typeof mini) {
+        if ('undefined' != typeof mini) {
             mini.hideMessageBox(messageid);
         }
         if (error.statusText) {
@@ -107,13 +133,13 @@ tgtools.net.asyncAjaxData = function (method,url, data1,success) {
  * @param {json} data1 请求的json数据
  * @returns {*}服务器返回的数据
  */
-tgtools.net.ajaxData = function (method,url, data1) {
+tgtools.net.ajaxData = function (method, url, data1) {
     var res = null;
-    var messageid=null;
-    if('undefined'!=typeof mini) {
+    var messageid = null;
+    if ('undefined' != typeof mini) {
         messageid = mini.loading("处理中请等待", "Loading");
     }
-    tgtools.net.rest.syncajaxJson(method,url, data1, function (data) {
+    tgtools.net.rest.syncajaxJson(method, url, data1, function (data) {
         res = data;
     }, function (error) {
         if (error.statusText) {
@@ -122,21 +148,21 @@ tgtools.net.ajaxData = function (method,url, data1) {
             } else {
                 alert(error.statusText);
             }
-            if('undefined'!=typeof mini) {
+            if ('undefined' != typeof mini) {
                 mini.hideMessageBox(messageid);
             }
             return;
         }
         if (error.status && error.status != 200) {
             alert("访问出错；错误码：" + error.status + "内容：" + error.responseText);
-            if('undefined'!=typeof mini) {
+            if ('undefined' != typeof mini) {
                 mini.hideMessageBox(messageid);
             }
             return;
         }
         alert(error);
     });
-    if('undefined'!=typeof mini) {
+    if ('undefined' != typeof mini) {
         mini.hideMessageBox(messageid);
     }
     return res;
@@ -153,8 +179,8 @@ tgtools.net.rest = {};
  * @param {function} successcall 成功回调方法
  * @param {function} errorcall 失败回调方法
  */
-tgtools.net.rest.ajaxJson = function (method,url, data, successcall, errorcall) {
-    this.invoke(url, method, 'json', ("GET"==method.toUpperCase())?data:JSON.stringify(data), true, successcall, errorcall);
+tgtools.net.rest.ajaxJson = function (method, url, data, successcall, errorcall) {
+    this.invoke(url, method, 'json', ("GET" == method.toUpperCase()) ? data : JSON.stringify(data), true, successcall, errorcall);
 };
 
 /**
@@ -167,8 +193,8 @@ tgtools.net.rest.ajaxJson = function (method,url, data, successcall, errorcall) 
  * @param {function} successcall 成功回调方法
  * @param {function} errorcall 失败回调方法
  */
-tgtools.net.rest.syncajaxJson = function (method,url, data, successcall, errorcall) {
-    this.invoke(url, method, 'json',("GET"==method.toUpperCase())?data:JSON.stringify(data), false, successcall, errorcall);
+tgtools.net.rest.syncajaxJson = function (method, url, data, successcall, errorcall) {
+    this.invoke(url, method, 'json', ("GET" == method.toUpperCase()) ? data : JSON.stringify(data), false, successcall, errorcall);
 };
 /**
  * 通用请求方法
@@ -192,8 +218,7 @@ tgtools.net.rest.invoke = function (url, method, datatype, data, async, successc
         "async": async,
         "dataType": datatype,//'json',
         "success": function (data) {
-            if(data.success==undefined)
-            {
+            if (data.success == undefined) {
                 successcall(data);
             }
             else if (data.success) {
@@ -214,12 +239,11 @@ tgtools.net.rest.invoke = function (url, method, datatype, data, async, successc
             }
         },
         "error": function (e) {
-            var error=e.responseText;
-            if(error.indexOf("window.top.location.href=")>=0)
-            {
-                var start=error.indexOf("window.top.location.href=");
-                var end=error.indexOf("</script>");
-                eval(error.substring(start,end));
+            var error = e.responseText;
+            if (error.indexOf("window.top.location.href=") >= 0) {
+                var start = error.indexOf("window.top.location.href=");
+                var end = error.indexOf("</script>");
+                eval(error.substring(start, end));
             }
             else if ("function" == typeof (errorcall)) {
                 errorcall(e);
@@ -228,7 +252,6 @@ tgtools.net.rest.invoke = function (url, method, datatype, data, async, successc
     });
 
 };
-
 
 
 //tgtools.plugins 插件操作

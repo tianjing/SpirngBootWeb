@@ -1,6 +1,7 @@
 package tgtools.spirngbootweb.demo.mybatis.db2;
 
-import tgtools.spirngbootweb.demo.mybatis.model.BaseModel;
+
+import tgtools.web.develop.model.BaseModel;
 
 import javax.persistence.Table;
 

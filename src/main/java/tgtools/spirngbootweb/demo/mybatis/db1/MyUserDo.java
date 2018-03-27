@@ -1,7 +1,8 @@
 package tgtools.spirngbootweb.demo.mybatis.db1;
 
-import tgtools.spirngbootweb.demo.mybatis.model.BaseModel;
+import tgtools.web.develop.model.BaseModel;
 
+import javax.persistence.Column;
 import javax.persistence.Table;
 
 /**
@@ -12,4 +13,25 @@ import javax.persistence.Table;
  */
 @Table(name = "ACT_ID_USER")
 public class MyUserDo extends BaseModel {
+    @Column(name="FIRST_")
+    private String mUserName;
+    @Column(name="PWD_")
+    private String mPassword;
+
+
+    public String getUserName() {
+        return mUserName;
+    }
+
+    public void setUserName(String pUserName) {
+        mUserName = pUserName;
+    }
+
+    public String getPassword() {
+        return mPassword;
+    }
+
+    public void setPassword(String pPassword) {
+        mPassword = pPassword;
+    }
 }

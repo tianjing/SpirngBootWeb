@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery-1.11.3.js"></script>
+    <script src="../../js/jquery.cookie.js"></script>
+    <script src="../../js/json2.js"></script>
+    <script src="../../js/tgtools.js"></script>
+
+</head>
+<body>
+<script>
+    var url =tgtools.util.url.getURL();
+    var isSSL = false;
+    isSSL = url.indexOf('https') >= 0;
+    url = url.replace("http://", "");
+    url = url.replace("https://", "");
+    var wsstart = "ws";
+    if (isSSL) {
+        wsstart = "wss";
+    }
+    var wsTextUrl = wsstart + "://" + url + "/myrest/websocket";
+    var ws = null;
+    var wstext = null;
+    var postdata = {"password": "1", "username": "admin"};
+    token=tgtools.net.postAjaxData("../../client/gettoken", postdata);
+    webSocketText();
+    var data={"token":token,"user":"admin","operation":"helloword","data":{"say":"im tg"}};
+    function sendText() {
+        wstext.send(JSON.stringify(data));
+    };
+
+    function webSocketText() {
+        wstext = new WebSocket(wsTextUrl);
+        wstext.onopen = function () {
+            console.log('wstext握手成功');
+            sendText();
+        };
+        wstext.onerror = function (e) {
+            console.log('wstext出错' + e);
+        }
+        wstext.onmessage = function (e) {
+            console.log(e.data);
+        };
+        wstext.onclose = function (a, b) {
+            console.log('wstextonclose');
+        };
+    }
+
+    function receiveText(data) {
+        textContent.innerHTML += data + '\r\n';
+    }
+
+
+
+</script>
+</body>
+</html>
