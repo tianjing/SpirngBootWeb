@@ -222,7 +222,7 @@
         <dependency>
             <groupId>com.github.tianjing</groupId>
             <artifactId>tgtools.web.develop</artifactId>
-            <version>1.0.3-SNAPSHOT</version>
+            <version>1.0.5-SNAPSHOT</version>
         </dependency>
         <!--tgtools activiti 达梦兼容包 开始 -->
         <dependency>
@@ -264,8 +264,14 @@
         <!--tgtools freemarker 扩展 工具  结束 -->
         <!--tgtools 工具包 结束 -->
     </dependencies>
+
     <repositories>
         <repository>
+            <releases>
+                <enabled>false</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
@@ -274,9 +280,9 @@
             <id>codehausSnapshots</id>
             <name>Codehaus Snapshots</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <layout>default</layout>
     </repository>
 </repositories>
-
 
 <build>
 <plugins>
