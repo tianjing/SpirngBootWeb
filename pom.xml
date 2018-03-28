@@ -28,14 +28,14 @@
     <dependencies>
         <!-- 排除 默认日志  使用log4j 开始-->
         <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter</artifactId>
-        <exclusions>
-            <exclusion>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-logging</artifactId>
-            </exclusion>
-        </exclusions>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- log4j日志 -->
         <dependency>
@@ -238,14 +238,14 @@
             <version>5.22.0.5</version>
         </dependency>
         <dependency>
-        <groupId>com.github.tianjing</groupId>
-        <artifactId>tgtools.activiti.explorer</artifactId>
-        <version>5.22.0.8</version>
+            <groupId>com.github.tianjing</groupId>
+            <artifactId>tgtools.activiti.explorer</artifactId>
+            <version>5.22.0.8</version>
         </dependency>
         <dependency>
-        <groupId>com.github.tianjing</groupId>
-        <artifactId>tgtools.quartz.explorer</artifactId>
-        <version>2.2.1.8</version>
+            <groupId>com.github.tianjing</groupId>
+            <artifactId>tgtools.quartz.explorer</artifactId>
+            <version>2.2.1.8</version>
         </dependency>
         <!--tgtools activiti 达梦建模 结束 -->
         <!--tgtools excel 工具  开始 -->
@@ -257,19 +257,33 @@
         <!--tgtools excel 工具  结束 -->
         <!--tgtools freemarker 扩展 工具  开始 -->
         <dependency>
-        <groupId>com.github.tianjing</groupId>
-        <artifactId>tgtools.freemark</artifactId>
-        <version>2.3.27.1</version>
+            <groupId>com.github.tianjing</groupId>
+            <artifactId>tgtools.freemark</artifactId>
+            <version>2.3.27.1</version>
         </dependency>
         <!--tgtools freemarker 扩展 工具  结束 -->
         <!--tgtools 工具包 结束 -->
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-</project>
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+            <id>codehausSnapshots</id>
+            <name>Codehaus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </repository>
+</repositories>
+
+
+<build>
+<plugins>
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+    </plugin>
+</plugins>
+</build>
+        </project>
