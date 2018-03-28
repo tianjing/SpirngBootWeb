@@ -1,6 +1,7 @@
 package tgtools.spirngbootweb.demo.websocket.command;
 
 
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import tgtools.exceptions.APPErrorException;
@@ -32,6 +33,7 @@ public class HelloWordCommandImpl implements Command {
     @Override
     public Object excute(Object... params) throws APPErrorException {
         JSONObject json =(JSONObject)params[0];
+
         System.out.println(mSysUserService.getUser().getUser().getUserName()+" say:"+json.getString("say"));
         return true;
     }

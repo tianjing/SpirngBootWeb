@@ -267,29 +267,17 @@
 
     <repositories>
         <repository>
-            <releases>
-                <enabled>false</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>warn</checksumPolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </snapshots>
-            <id>codehausSnapshots</id>
-            <name>Codehaus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        <layout>default</layout>
-    </repository>
-</repositories>
+            <id>sonatype-maven</id>
+            <url>https://oss.sonatype.org/content/repositories/public/</url>
+        </repository>
+    </repositories>
 
-<build>
-<plugins>
-    <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-    </plugin>
-</plugins>
-</build>
-        </project>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
