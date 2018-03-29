@@ -245,7 +245,7 @@
         <dependency>
             <groupId>com.github.tianjing</groupId>
             <artifactId>tgtools.quartz.explorer</artifactId>
-            <version>2.2.1.9</version>
+            <version>2.2.1.10</version>
         </dependency>
         <!--tgtools activiti 达梦建模 结束 -->
         <!--tgtools excel 工具  开始 -->
