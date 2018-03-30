@@ -222,7 +222,7 @@
         <dependency>
             <groupId>com.github.tianjing</groupId>
             <artifactId>tgtools.web.develop</artifactId>
-            <version>1.0.5-SNAPSHOT</version>
+            <version>1.0.6</version>
         </dependency>
         <!--tgtools activiti 达梦兼容包 开始 -->
         <dependency>
