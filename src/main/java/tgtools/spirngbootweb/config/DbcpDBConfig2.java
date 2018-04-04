@@ -92,6 +92,10 @@ public class DbcpDBConfig2 {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
         factoryBean.setMapperLocations(new Resource[]{ new UrlResource(org.springframework.util.ResourceUtils.getURL("classpath:mybatis/db2/UserMapper.xml"))});
+        //驼峰命名
+        org.apache.ibatis.session.Configuration config =new org.apache.ibatis.session.Configuration();
+        config.setMapUnderscoreToCamelCase(true);
+        factoryBean.setConfiguration(config);
         return factoryBean.getObject();
 
     }
