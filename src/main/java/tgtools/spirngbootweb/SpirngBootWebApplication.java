@@ -37,7 +37,8 @@ public class SpirngBootWebApplication {
 		List<MyUserDO> res2=dUserDao.lista();
 		System.out.println("res1:"+res1.size());
 		System.out.println("res2:"+res2.size());
-
+		DataTable dt=dUserDao.selectTable(1,10);
+		System.out.println(dt);
 //		try {
 //			DataSource dataSource = tgtools.web.platform.Platform.getBean("dataSource");
 //			Connection conn = dataSource.getConnection();

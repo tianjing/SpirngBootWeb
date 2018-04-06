@@ -2,6 +2,7 @@ package tgtools.spirngbootweb.demo.mybatis.db1;
 
 
 import org.apache.ibatis.annotations.SelectProvider;
+import tgtools.data.DataTable;
 import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface MyUserDao extends Mapper<MyUserDO> {
     List<MyUserDO> pageSql(int pPageIndex, int pPageSize);
 
     List<MyUserDO> lista();
+    @SelectProvider(type=MyUserDO.class,method = "pageSql")
+    DataTable selectTable(int pPageIndex, int pPageSize);
 }
