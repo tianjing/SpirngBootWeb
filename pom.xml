@@ -225,7 +225,7 @@
         <dependency>
             <groupId>com.github.tianjing</groupId>
             <artifactId>tgtools.web.develop</artifactId>
-            <version>1.0.8-SNAPSHOT</version>
+            <version>1.0.9</version>
         </dependency>
         <!--tgtools activiti 达梦兼容包 开始 -->
         <dependency>
@@ -265,6 +265,11 @@
             <version>2.3.27.1</version>
         </dependency>
         <!--tgtools freemarker 扩展 工具  结束 -->
+        <dependency>
+            <groupId>dm</groupId>
+            <artifactId>dm.Dm7JdbcDriver16</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
@@ -272,7 +277,6 @@
             <url>https://oss.sonatype.org/content/repositories/public/</url>
         </repository>
     </repositories>
-
     <build>
         <!--<plugins>-->
             <!--<plugin>-->
