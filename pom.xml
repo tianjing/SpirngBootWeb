@@ -8,6 +8,7 @@
     <version>1.0.0</version>
     <modules>
         <module>DevService/testservice</module>
+        <module>DevPlugin/TestPlugin</module>
     </modules>
     <packaging>pom</packaging>
 
