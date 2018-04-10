@@ -93,17 +93,7 @@ public class DbcpDBConfig {
         }
         return path;
     }
-    @Bean(destroyMethod = "close")
-    public TransactionDataAccess getLocalDataAccess() {
-        TransactionDataAccess localDataAccess = new TransactionDataAccess();
-        try {
-            localDataAccess.init(dataSource());
-            tgtools.db.DataBaseFactory.add("localDATAACCESS", localDataAccess);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return localDataAccess;
-    }
+
     @Bean
     public SqlSessionFactory sqlSessionFactory1() throws Exception {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
