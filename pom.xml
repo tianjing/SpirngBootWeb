@@ -220,7 +220,7 @@
         <dependency>
             <groupId>com.github.tianjing</groupId>
             <artifactId>tgtools.web</artifactId>
-            <version>1.0.329</version>
+            <version>1.0.330</version>
         </dependency>
         <!--tgtools develop 开发套路 开始 -->
         <dependency>
