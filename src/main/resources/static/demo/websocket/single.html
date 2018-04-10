@@ -24,8 +24,9 @@
     var ws = null;
     var wstext = null;
     var username= "admin";
-    var postdata = {"password": "1", "username": "admin"};
-    token = tgtools.net.postAjaxData("../../client/gettoken", postdata);
+    var postdata = {"password": "1", "username": username};
+    //获取token
+    var token = tgtools.net.postAjaxData("../../client/gettoken", postdata);
     var data={"say": "im tg"};
     var notifyClient = new NotifyWebSocket(wsTextUrl);
 
