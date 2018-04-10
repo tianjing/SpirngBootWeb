@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import tgtools.quartz.explorer.utils.QuartzManager;
 import tgtools.util.ReflectionUtil;
 
 import javax.sql.DataSource;
@@ -24,6 +25,7 @@ import java.util.Properties;
 @Configuration
 @MapperScan(basePackages = {"tgtools.quartz.explorer.dao"}, sqlSessionFactoryRef = "quartzSqlSessionFactory")
 public class QuartzConfigration  extends tgtools.quartz.explorer.config.QuartzConfigration{
+
 
 //    /**
 //     * 指定数据库类型

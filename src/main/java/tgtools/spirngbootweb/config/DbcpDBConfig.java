@@ -5,7 +5,6 @@ import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
-import tgtools.spirngbootweb.demo.mybatis.common2.DataInterceptor;
 import tgtools.web.develop.mybatis.interceptor.DataTableInterceptor;
 import tk.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
@@ -115,7 +114,7 @@ public class DbcpDBConfig {
         config.setMapUnderscoreToCamelCase(true);
         factoryBean.setConfiguration(config);
         //支持返回DataTable类型
-        factoryBean.setPlugins(new Interceptor[]{new DataInterceptor(),new DataTableInterceptor()});
+        factoryBean.setPlugins(new Interceptor[]{new DataTableInterceptor()});
         return factoryBean.getObject();
 
     }

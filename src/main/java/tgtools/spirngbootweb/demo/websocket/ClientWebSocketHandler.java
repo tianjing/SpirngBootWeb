@@ -31,7 +31,7 @@ public class ClientWebSocketHandler extends AbstractSingleWebSocketHandler {
     }
 
     @Override
-    public String getRest() {
+    public String getServletName() {
         return "rest";
     }
 

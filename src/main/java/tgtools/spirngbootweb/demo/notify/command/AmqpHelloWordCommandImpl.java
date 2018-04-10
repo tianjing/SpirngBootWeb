@@ -1,12 +1,12 @@
-package tgtools.spirngbootweb.demo.websocket.command;
+package tgtools.spirngbootweb.demo.notify.command;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import tgtools.exceptions.APPErrorException;
 import tgtools.json.JSONObject;
+import tgtools.spirngbootweb.demo.notify.AmqpClientWebSocketHandler;
 import tgtools.spirngbootweb.demo.service.UserServiceImpl;
-import tgtools.spirngbootweb.demo.websocket.ClientWebSocketHandler;
 import tgtools.web.develop.command.Command;
 import tgtools.web.develop.message.NotifyMessage;
 
@@ -16,15 +16,17 @@ import tgtools.web.develop.message.NotifyMessage;
  * @Description
  * @date 10:35
  */
-@Controller
-public class HelloWordCommandImpl implements Command {
+@Service
+public class AmqpHelloWordCommandImpl implements Command {
+
     @Autowired
     UserServiceImpl mSysUserService;
     @Autowired
-    ClientWebSocketHandler mWebSocketHandler;
+    AmqpClientWebSocketHandler mAmqpClientWebSocketHandler;
+
     @Override
     public String getType() {
-        return "websocket";
+        return "amqp";
     }
 
     @Override
@@ -36,7 +38,6 @@ public class HelloWordCommandImpl implements Command {
     public Object excute(Object... params) throws APPErrorException {
         JSONObject json =(JSONObject)params[0];
         System.out.println(mSysUserService.getUser().getUser().getUserName()+" say:"+json.getString("say"));
-
         NotifyMessage message=new NotifyMessage();
         message.setSender("SYSTEM");
         message.setType("hello");
@@ -44,9 +45,7 @@ public class HelloWordCommandImpl implements Command {
         JSONObject json1 =new JSONObject();
         json1.put(mSysUserService.getUser().getUser().getUserName()," say:"+json.getString("say"));
         message.setContent(json1);
-        mWebSocketHandler.sendNotifyMessage(mSysUserService.getUser().getUser().getUserName(),message);
-
-
+        mAmqpClientWebSocketHandler.sendNotifyMessage(mSysUserService.getUser().getUser().getUserName(),message);
         return true;
     }
 }
