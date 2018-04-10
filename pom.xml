@@ -275,7 +275,7 @@
         <dependency>
             <groupId>com.github.tianjing</groupId>
             <artifactId>tgtools.notify.amqp</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
         <!--tgtools amqp rabbitmq 消息通知结束 -->
     </dependencies>
