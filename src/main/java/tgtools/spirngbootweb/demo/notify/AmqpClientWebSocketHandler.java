@@ -12,7 +12,8 @@ import tgtools.spirngbootweb.demo.service.UserServiceImpl;
  * @Description
  * @date 17:17
  */
-@Controller
+//请确保rabbitmq配置正确再启用
+//@Controller
 public class AmqpClientWebSocketHandler extends AbstractClientWebSocketHandler {
 
 

@@ -21,7 +21,7 @@ public class AmqpNotifyCommandImpl implements Command {
 
     @Autowired
     UserServiceImpl mSysUserService;
-    @Autowired
+    @Autowired(required=false)
     RabbitMqService mRabbitMqService;
 
     @Override

@@ -21,7 +21,7 @@ public class AmqpHelloWordCommandImpl implements Command {
 
     @Autowired
     UserServiceImpl mSysUserService;
-    @Autowired
+    @Autowired(required = false)
     AmqpClientWebSocketHandler mAmqpClientWebSocketHandler;
 
     @Override

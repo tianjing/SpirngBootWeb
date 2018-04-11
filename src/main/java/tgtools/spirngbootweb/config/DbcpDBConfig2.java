@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import tk.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,40 +35,14 @@ public class DbcpDBConfig2 {
         return dd;
     }
 
-
+    @ConfigurationProperties(prefix = "spring.datasource.db2")
     @Bean(initMethod = "init", destroyMethod = "close")   //声明其为Bean实例
     public DataSource dataSource2() {
         DruidDataSource datasource = new DruidDataSource();
-
         //本地库
         String h2_1_url="jdbc:h2:file:${path}\\db\\db2;FILE_LOCK=NO;INIT=CREATE SCHEMA IF NOT EXISTS TG\\;SET SCHEMA TG;";
-        String h2_1_driver="org.h2.Driver";
-        String username="TG";
-        String password="TG123";
         h2_1_url= StringUtil.replace(h2_1_url,"${path}",getClassPath());
-        datasource.setUsername(username);
-        datasource.setPassword(password);
-        datasource.setDriverClassName(h2_1_driver);
         datasource.setUrl(h2_1_url);
-
-        //configuration
-        datasource.setInitialSize(1);
-        datasource.setMinIdle(3);
-        datasource.setMaxActive(20);
-        datasource.setMaxWait(60000);
-        datasource.setTimeBetweenEvictionRunsMillis(60000);
-        datasource.setMinEvictableIdleTimeMillis(30000);
-        datasource.setValidationQuery("select 'x'");
-        datasource.setTestWhileIdle(true);
-        datasource.setTestOnBorrow(false);
-        datasource.setTestOnReturn(false);
-        datasource.setPoolPreparedStatements(true);
-        datasource.setMaxPoolPreparedStatementPerConnectionSize(20);
-        try {
-            datasource.setFilters("stat,slf4j");
-        } catch (SQLException e) {
-            logger.error("druid configuration initialization filter", e);
-        }
 
         return datasource;
     }
