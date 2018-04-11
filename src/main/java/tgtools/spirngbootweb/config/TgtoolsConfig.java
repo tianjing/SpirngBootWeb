@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.socket.config.annotation.DelegatingWebSocketConfiguration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import tgtools.log.LoggerFactory;
 import tgtools.message.MessageFactory;
@@ -55,7 +56,7 @@ public class TgtoolsConfig  {
         AnnotationConfigWebApplicationContext applicationContext
                 = new AnnotationConfigWebApplicationContext();
         //启动 websocket
-        applicationContext.register(WebsocketConfig.class);
+        applicationContext.register(DelegatingWebSocketConfiguration.class);
         //通过构造函数指定dispatcherServlet的上下文
         PlatformDispatcherServlet rest_dispatcherServlet
                 = new PlatformDispatcherServlet();
@@ -131,9 +132,4 @@ public class TgtoolsConfig  {
         MessageFactory.start();
     }
 
-    @Configuration
-    @EnableWebSocket
-    public static class WebsocketConfig{
-
-    }
 }
