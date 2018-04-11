@@ -26,7 +26,6 @@ import java.net.URL;
  * @date 8:54
  */
 @Configuration
-@EnableWebSocket
 public class TgtoolsConfig  {
 
     @Autowired
@@ -55,6 +54,8 @@ public class TgtoolsConfig  {
         //org.springframework.web.context.support.XmlWebApplicationContext;
         AnnotationConfigWebApplicationContext applicationContext
                 = new AnnotationConfigWebApplicationContext();
+        //启动 websocket
+        applicationContext.register(WebsocketConfig.class);
         //通过构造函数指定dispatcherServlet的上下文
         PlatformDispatcherServlet rest_dispatcherServlet
                 = new PlatformDispatcherServlet();
@@ -128,5 +129,11 @@ public class TgtoolsConfig  {
     protected void loadMessage()
     {
         MessageFactory.start();
+    }
+
+    @Configuration
+    @EnableWebSocket
+    public static class WebsocketConfig{
+
     }
 }
