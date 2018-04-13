@@ -4,8 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import tgtools.web.entity.GridData;
-import tgtools.web.entity.ResposeData;
+import tgtools.web.develop.message.GridMessage;
+import tgtools.web.develop.message.ResponseMessage;
+
 
 
 import java.util.ArrayList;
@@ -22,8 +23,8 @@ import java.util.List;
 public class ListController {
     @PostMapping(value = "data", produces = {"application/json"})
     @ResponseBody
-    public GridData getListData() {
-        GridData resutl = new GridData();
+    public GridMessage getListData() {
+        GridMessage resutl = new GridMessage();
         try {
             List<MyData> dd = new ArrayList<MyData>();
             MyData data = new MyData();
@@ -37,10 +38,8 @@ public class ListController {
             dd.add(data1);
 
             resutl.setData(dd);
-            resutl.setPageSize(10);
-            resutl.setCurPage(1);
-            resutl.setTotalRows(200);
-            resutl.setSuccess(true);
+            resutl.setTotal(200);
+            resutl.setStatus(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -49,18 +48,18 @@ public class ListController {
 
     @PostMapping(value = "add", produces = {"application/json"})
     @ResponseBody
-    public ResposeData add() {
-        ResposeData result = new ResposeData();
+    public ResponseMessage add() {
+        ResponseMessage result = new ResponseMessage();
         try {
             MyData data = new MyData();
             data.setA("fdasfdas");
             data.setB("312321");
             result.setData(data);
-            result.setSuccess(true);
+            result.setStatus(true);
         }catch (Exception ex)
         {
-            result.setSuccess(false);
-            result.setError(ex.getMessage());
+            result.setStatus(false);
+            result.setData(ex.getMessage());
         }
         return result;
     }

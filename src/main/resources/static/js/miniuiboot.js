@@ -18,10 +18,11 @@
     if (path.indexOf("https:") == -1 && path.indexOf("http:") == -1 && path.indexOf("file:") == -1 && path.indexOf("\/") != 0) {
         path = href + "/" + path;
     }
+    serverpath="/"+ss[3]+"/";
     return path;
 }
-
-var bootPATH = __CreateJSPath("boot.js");
+var serverpath="";
+var bootPATH = __CreateJSPath("miniuiboot.js");
 
 //debugger
 mini_debugger = true;
