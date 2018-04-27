@@ -36,7 +36,7 @@
     </appender>
 
     <appender name="jdbc"
-              class="tgtools.log.MyJDBCAppender">
+              class="tgtools.web.log.MyJDBCAppender">
     </appender>
 
     <appender name="asynclogfile" class="org.apache.log4j.AsyncAppender">
