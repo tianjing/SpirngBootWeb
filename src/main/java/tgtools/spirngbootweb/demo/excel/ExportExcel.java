@@ -45,7 +45,8 @@ public class ExportExcel {
             json1.put("BIR","2014-12:12 12:00:00");
             array.add(json1);
             export.appendData(columns,array);
-            export.appendData(columns,array,false,"sheet1",0,2);
+            export.appendData(columns,array,true,"sheet2",1,2);
+            export.appendData(columns,array,true,"sheet3",2,0);
 
             byte[] data= export.getBytes();
             export.close();
