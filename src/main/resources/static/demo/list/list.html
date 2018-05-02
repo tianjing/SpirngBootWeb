@@ -35,8 +35,9 @@
 <script>
     $(function(){
         mini.parse();
+        var url =tgtools.util.url.getURL()+"/demo/list/data"
+        var dd=tgtools.net.postAjaxData(url,{});
 
-        var dd=tgtools.net.ajaxData('POST','data',{});
         alert(dd);
 
         var dd=tgtools.net.ajaxData('POST','add',{});

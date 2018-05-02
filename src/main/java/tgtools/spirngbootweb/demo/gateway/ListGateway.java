@@ -20,7 +20,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("demo/list")
-public class ListController {
+public class ListGateway {
     @PostMapping(value = "data", produces = {"application/json"})
     @ResponseBody
     public GridMessage getListData() {
