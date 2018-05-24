@@ -10,10 +10,10 @@
         </encoder>
     </appender>
     <!-- 按照每天生成日志文件 -->
-    <appender name="FILE" class="tgtools.web.log.logback.LogbackRollingFileAppender">
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--日志文件输出的文件名-->
-            <FileNamePattern>/WEB-INF/logs/myApp.log.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>WEB-INF/logs/myApp.log.%d{yyyy-MM-dd}.log</FileNamePattern>
             <MaxHistory>30</MaxHistory>
         </rollingPolicy>
         <!-- 日志输出编码 -->
