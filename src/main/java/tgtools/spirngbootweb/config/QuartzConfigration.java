@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import tgtools.quartz.explorer.utils.QuartzManager;
 import tgtools.util.ReflectionUtil;
 
@@ -26,7 +27,44 @@ import java.util.Properties;
 @MapperScan(basePackages = {"tgtools.quartz.explorer.dao"}, sqlSessionFactoryRef = "quartzSqlSessionFactory")
 public class QuartzConfigration  extends tgtools.quartz.explorer.config.QuartzConfigration{
 
+    @Override
+    @Bean
+    public SchedulerFactoryBean schedulerFactoryBean(@Qualifier("dataSource") DataSource dataSource) {
 
+        SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean();
+        try {
+            schedulerFactoryBean.setOverwriteExistingJobs(true);
+            schedulerFactoryBean.setQuartzProperties(quartzProperties());
+            schedulerFactoryBean.setJobFactory(jobFactory());
+//            schedulerFactoryBean.setDataSource(dataSource);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return schedulerFactoryBean;
+    }
+
+    // 指定quartz.properties
+    @Override
+    @Bean
+    public Properties quartzProperties() throws IOException {
+        InputStream inputStream = null;
+        try {
+            PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
+            Properties prop = new Properties();
+
+            prop.load(ReflectionUtil.getResourceAsStream("config/quartz.properties"));
+            propertiesFactoryBean.setProperties(prop);
+            propertiesFactoryBean.afterPropertiesSet();
+            return propertiesFactoryBean.getObject();
+        } finally {
+            if (null != inputStream) {
+                try {
+                    inputStream.close();
+                } catch (Exception e) {
+                }
+            }
+        }
+    }
 //    /**
 //     * 指定数据库类型
 //     */

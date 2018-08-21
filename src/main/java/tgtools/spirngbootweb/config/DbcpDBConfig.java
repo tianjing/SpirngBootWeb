@@ -47,8 +47,8 @@ public class DbcpDBConfig {
         String h2_1_url="jdbc:h2:file:${path}\\db\\db1;FILE_LOCK=NO;INIT=CREATE SCHEMA IF NOT EXISTS TG\\;SET SCHEMA TG;";
         h2_1_url= StringUtil.replace(h2_1_url,"${path}",getClassPath());
         datasource.setUrl(h2_1_url);
-        //String localusername="TG";
-        //String localpassword="TG123";
+        String localusername="TG";
+        String localpassword="TG123";
        // datasource.setUsername(localusername);
         //datasource.setPassword(localpassword);
 

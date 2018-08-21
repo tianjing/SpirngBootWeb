@@ -8,10 +8,16 @@ import tgtools.plugin.util.JARLoader;
 
 @Component
 public class WelcomeJob implements Job {
-    JARLoader jar = new JARLoader(ClassLoader.getSystemClassLoader());
 
     @Override
     public void execute(JobExecutionContext arg0) throws JobExecutionException {
+        System.out.println("WelcomeJob 开始");
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("WelcomeJob 结束");
 
     }
 

@@ -73,13 +73,13 @@ public class TgtoolsConfig {
         registrationBean.setName("rest");
         return registrationBean;
     }
-
     /**
      *
      */
     @PostConstruct
     public void startup() {
         cacheManager();
+
         Platform.startup(applicationContext, false, false, false, false, false, false);
         //springboot 默认不使用log4j所以可以不用 如果使用 请 仔细查看 pom 中   <!-- 排除 默认日志  使用log4j 开始-->
         loadLogger();
