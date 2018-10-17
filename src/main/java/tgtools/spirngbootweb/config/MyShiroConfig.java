@@ -6,11 +6,13 @@ import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.springframework.context.annotation.Configuration;
 import tgtools.spirngbootweb.demo.bo.UserBO;
+import tgtools.spirngbootweb.demo.shiro.LoginFormAuthenticationFilter;
 import tgtools.spirngbootweb.demo.shiro.UserRealm;
 import tgtools.web.develop.config.ShiroConfig;
 
 import javax.servlet.*;
 import java.io.IOException;
+import java.util.LinkedHashMap;
 
 /**
  * @author 田径
@@ -36,18 +38,19 @@ public class MyShiroConfig extends ShiroConfig {
         shiroFilterFactoryBean.setLoginUrl("/login.html");
         shiroFilterFactoryBean.setSuccessUrl("/index");
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
-//        LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap();
-//        filterChainDefinitionMap.put("/login.html", "anon");
-//        filterChainDefinitionMap.put("/css/**", "anon");
-//        filterChainDefinitionMap.put("/js/**", "anon");
-//        filterChainDefinitionMap.put("/image/**", "anon");
-//        filterChainDefinitionMap.put("/scripts/**", "anon");
-//        filterChainDefinitionMap.put("/fonts/**", "anon");
-//        filterChainDefinitionMap.put("/user/login", "anon");
-//        filterChainDefinitionMap.put("/logout", "logout");
-//        filterChainDefinitionMap.put("/**", "authc");
-//        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
-
+        LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap();
+        filterChainDefinitionMap.put("/login.html", "anon");
+        filterChainDefinitionMap.put("/css/**", "anon");
+        filterChainDefinitionMap.put("/js/**", "anon");
+        filterChainDefinitionMap.put("/image/**", "anon");
+        filterChainDefinitionMap.put("/scripts/**", "anon");
+        filterChainDefinitionMap.put("/fonts/**", "anon");
+        filterChainDefinitionMap.put("/user/login", "anon");
+        filterChainDefinitionMap.put("/logout", "logout");
+        filterChainDefinitionMap.put("/**", "authc");
+        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
+        //自定义 未登录时的处理
+        //shiroFilterFactoryBean.getFilters().put("authc",new LoginFormAuthenticationFilter());
         //activiti 用户id自动注入
 //        filterChainDefinitionMap.put("/**", "authc,MyFilter");
  //       shiroFilterFactoryBean.getFilters().put("MyFilter",new ActivitiFilter());

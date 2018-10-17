@@ -2524,3 +2524,30 @@ select top 1 * from LogInfo  [42102-196]
 2018-07-30 20:33:29 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Table "LOGINFO" not found; SQL statement:
 select top 1 * from LogInfo  [42102-196]
+2018-08-24 10:57:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "LOGINFO" not found; SQL statement:
+select top 1 * from LogInfo  [42102-196]
+2018-10-17 09:00:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "LOGINFO" not found; SQL statement:
+select top 1 * from LogInfo  [42102-196]
+2018-10-17 09:01:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "LOGINFO" not found; SQL statement:
+select top 1 * from LogInfo  [42102-196]
+2018-10-17 09:02:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "LOGINFO" not found; SQL statement:
+select top 1 * from LogInfo  [42102-196]
+2018-10-17 09:04:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "LOGINFO" not found; SQL statement:
+select top 1 * from LogInfo  [42102-196]
+2018-10-17 09:11:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "LOGINFO" not found; SQL statement:
+select top 1 * from LogInfo  [42102-196]
+2018-10-17 09:12:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "LOGINFO" not found; SQL statement:
+select top 1 * from LogInfo  [42102-196]
+2018-10-17 09:14:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "LOGINFO" not found; SQL statement:
+select top 1 * from LogInfo  [42102-196]
+2018-10-17 09:15:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "LOGINFO" not found; SQL statement:
+select top 1 * from LogInfo  [42102-196]
