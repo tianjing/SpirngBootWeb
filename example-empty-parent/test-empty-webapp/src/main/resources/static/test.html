@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/json2.js"></script>
+    <script src="js/jsload.js"></script>
+
+</head>
+<body>
+<script>
+    var dd = tgtools.net.postAjaxData("http://10.0.0.29:7000/platform/verify/task/insertTask", {
+        versionId: "7737A918-2296-4536-B0B2-5A508598A1AE",
+        applicant: "系统管理员"
+    });
+    alert(dd);
+</script>
+</body>
+</html>

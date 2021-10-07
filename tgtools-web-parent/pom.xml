@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.tianjing</groupId>
+    <artifactId>tgtools-web-parent</artifactId>
+    <version>2.3.4.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <modules>
+        <module>tgtools-web-security-autoconfigure</module>
+        <module>tgtools-web-security-starter-web</module>
+    </modules>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <url>https://github.com/tianjing/SpirngBootWeb</url>
+    <description>tgtools-web-parent spring boot ext parent</description>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>tianjing</name>
+            <email>tian___jing@hotmail.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/tianjing/SpirngBootWeb.git</connection>
+        <developerConnection>scm:git:https://github.com/tianjing/SpirngBootWeb.git</developerConnection>
+        <url>https://github.com/tianjing/SpirngBootWeb</url>
+        <tag>v${project.version}</tag>
+    </scm>
+
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <eureka.version>2.3.0-SNAPSHOT</eureka.version>
+        <develop.version>2.1.0-SNAPSHOT</develop.version>
+        <develop.newversion>2.1.1-SNAPSHOT</develop.newversion>
+        <platform.version>2.1.0-SNAPSHOT</platform.version>
+        <sprng-data-elasticsearch-version>4.0.4.RELEASE</sprng-data-elasticsearch-version>
+        <elasticsearch-version>7.6.2</elasticsearch-version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR8</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.tianjing</groupId>
+                <artifactId>tgtools.web</artifactId>
+                <version>1.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.tianjing</groupId>
+                <artifactId>tgtools.core</artifactId>
+                <version>1.2.7</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.tianjing</groupId>
+                <artifactId>tgtools.web.develop</artifactId>
+                <version>1.2.7</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.tianjing</groupId>
+                <artifactId>tgtools.tasklibrary</artifactId>
+                <version>0.1.11</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-elasticsearch</artifactId>
+                <version>${sprng-data-elasticsearch-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elasticsearch-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-client</artifactId>
+                <version>${elasticsearch-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elasticsearch-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>2.1.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.simpleframework</groupId>
+                <artifactId>simple-xml</artifactId>
+                <version>2.7.1</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>1.10</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>3.5.5</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.1.24</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dameng</groupId>
+                <artifactId>Dm7JdbcDriver17</artifactId>
+                <version>7.6.0.165</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.tianjing</groupId>
+                <artifactId>Dm6JdbcDriver</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

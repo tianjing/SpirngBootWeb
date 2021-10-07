@@ -1,0 +1,40 @@
+spring.datasource.base.name: db1
+#url: jdbc:h2:file:\db\db1;FILE_LOCK=NO;INIT=CREATE SCHEMA IF N;OT EXISTS TG\;SET SCHEMA TG
+spring.datasource.base.username: TG
+spring.datasource.base.password: TG123
+#spring.datasource.base.driverClassName: dm.jdbc.driver.DmDriver
+spring.datasource.base.driverClassName: org.h2.Driver
+spring.datasource.base.initialSize: 1
+spring.datasource.base.minIdle: 5
+spring.datasource.base.maxActive: 20
+spring.datasource.base.maxWait: 60000
+spring.datasource.base.poolPreparedStatements: true
+spring.datasource.base.maxPoolPreparedStatementPerConnectionSize: 20
+#spring.datasource.base.filters: stat,log4j
+spring.datasource.base.timeBetweenEvictionRunsMillis: 60000
+spring.datasource.base.minEvictableIdleTimeMillis: 30000
+spring.datasource.base.validationQuery: SELECT 1
+spring.datasource.base.testWhileIdle: true
+spring.datasource.base.testOnBorrow: false
+spring.datasource.base.testOnReturn: false
+spring.datasource.base.connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+
+spring.datasource.db2.name: db2
+spring.datasource.db2.username: TG
+spring.datasource.db2.password: TG123
+spring.datasource.db2.driverClassName: org.h2.Driver
+spring.datasource.db2.initialSize: 1
+spring.datasource.db2.minIdle: 5
+spring.datasource.db2.maxActive: 20
+spring.datasource.db2.maxWait: 60000
+spring.datasource.db2.poolPreparedStatements: true
+spring.datasource.db2.maxPoolPreparedStatementPerConnectionSize: 20
+#spring.datasource.db2.filters: stat,log4j
+spring.datasource.db2.timeBetweenEvictionRunsMillis: 60000
+spring.datasource.db2.minEvictableIdleTimeMillis: 30000
+spring.datasource.db2.validationQuery: SELECT 1
+spring.datasource.db2.testWhileIdle: true
+spring.datasource.db2.testOnBorrow: false
+spring.datasource.db2.testOnReturn: false
+

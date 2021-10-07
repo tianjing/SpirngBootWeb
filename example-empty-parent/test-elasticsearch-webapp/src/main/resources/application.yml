@@ -1,0 +1,10 @@
+spring.http.encoding.force: true
+spring.jackson.time-zone: GMT+8
+spring.jackson.date-format: yyyy-MM-dd HH:mm:ss
+spring.aop.proxy-target-class: true
+spring.http.multipart.maxFileSize: 900MB
+spring.http.multipart.maxRequestSize: 900MB
+spring.servlet.multipart.max-file-size: 900MB
+spring.servlet.multipart.max-request-size: 900MB
+spring.application.name: teamfour-elasticsearch-client-test1
+eureka.instance.prefer-ip-address: true

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT= "no-cache, must-revalidate">
+    <meta HTTP-EQUIV="Expires" CONTENT="0">
+    <title>分布式电源项目</title>
+    <script src="../../js/miniuiboot.js"></script>
+    <script src="../../js/jsload.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<!--Layout-->
+<!--撑满页面-->
+<div class="mini-fit">
+    <!--Splitter-->
+    <div class="mini-splitter" style="width:100%;height:100%;" borderStyle="border:0;">
+        <div size="180" maxSize="250" minSize="100" showCollapseButton="true" style="border-width:1px;">
+            <!--Tree-->
+            <ul id="tree1" class="mini-tree" style="width:100%;height:100%;"
+                showTreeIcon="true" textField="name"
+
+                idField="id" parentField="pid" resultAsTree="true"
+            >
+            </ul>
+        </div>
+        <div showCollapseButton="false" style="border:0px;">
+            <!--Tabs-->
+            <div id="mainTabs" class="mini-tabs bg-toolbar" activeIndex="0" style="width:100%;height:100%;">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="application/javascript">
+    $(function (){
+        mini.parse();
+        var tree=mini.get("tree1");
+        tree.load("data/list");
+    });
+</script>
+</body>
+</html>

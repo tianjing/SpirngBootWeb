@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config><!--暂时没用，移动文件服务不用配置文件-->
+    <!--将指定目录的文件移动到解析目录 -->
+    <SourceDir>D:/tianjing/Desktop/111</SourceDir>
+    <TargetDir>C:/Works/DQ/javademos/efiletodb/file</TargetDir>
+
+    <!--下载FTP的文件到解析目录 -->
+    <ftp_ip></ftp_ip><!-- 172.17.12.1 -->
+    <ftp_port></ftp_port><!-- 1234 -->
+    <ftp_username></ftp_username><!-- WZXMGL -->
+    <ftp_password></ftp_password><!-- wzxmgl#12! -->
+    <ftp_path></ftp_path><!-- / -->
+
+    <!--使用的数据源(如：SpringDataSource); 不写使用默认  -->
+   <DataSource></DataSource>
+    <!--运行间隔 秒  -->
+    <RunInterval>20</RunInterval>
+</Config>

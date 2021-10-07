@@ -1,0 +1,13 @@
+package com.github.tianjing.test.drools.webapp
+
+import com.github.tianjing.test.drools.webapp.model.Address;
+import tgtools.util.LogHelper;
+
+rule "Postcode should be filled with exactly 5 numbers"
+    when
+        $address : Address(postcode != null, postcode matches "([0-9]{5})")
+    then
+        System.out.println("规则中打印日志：校验通过!");
+        tgtools.util.LogHelper.infoForce("SSSSS","规则中打印日志：校验通过!!!","SSSS");
+        $address.setStreet("无效的地址");
+end

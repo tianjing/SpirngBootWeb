@@ -1,0 +1,7 @@
+spring.http.encoding.force: true
+spring.jackson.time-zone: GMT+8
+spring.jackson.date-format: yyyy-MM-dd HH:mm:ss
+spring.aop.proxy-target-class: true
+spring.servlet.multipart.max-file-size: 900MB
+spring.servlet.multipart.max-request-size: 900MB
+server.port: 8080

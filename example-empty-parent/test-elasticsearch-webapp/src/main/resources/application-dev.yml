@@ -1,0 +1,15 @@
+app.id: 4B408768E3FF46E65C5C678F363DA0BF
+app.platform.url: http://teamfour-platform-produce
+app.cloud.platform.name: teamfour-platform-produce
+eureka.client.serviceUrl.defaultZone: http://tianjing:tianjing123!@192.168.88.211:4444/eureka/eureka/
+
+
+#app.main-page: /index
+app.login-page: /admin/login.html
+#app.resource-path: /admin/login.html,/user/login,/logout,/login1,/login,/webjars/**,/admin/js/**,/admin/css/**
+#app.resource-path-ext: /ress/**
+app.resource-path: /**
+#spring.elasticsearch.rest.uris: http://192.168.1.137:9200
+spring.elasticsearch.rest.uris: http://192.168.1.135:1334
+spring.elasticsearch.rest.connection-timeout: 90s
+spring.elasticsearch.rest.read-timeout: 90s

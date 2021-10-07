@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery-1.11.3.js"></script>
+    <script src="../../js/jquery.cookie.js"></script>
+    <script src="../../js/json2.js"></script>
+    <script src="../../js/jsload.js"></script>
+</head>
+<body>
+<script>
+
+    var postdata = {"password": "1", "username": "admin"};
+    var token=tgtools.net.postAjaxData("../../client/gettoken", postdata);
+
+    var singleData = {"token": token, "user": "admin","operation":"operation1","data":{"mess":"fds"}};
+    var res=token=tgtools.net.postAjaxData("../../client/invoke", singleData);
+    alert(res);
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery-1.11.3.js"></script>
+    <script src="../../js/jquery.cookie.js"></script>
+    <script src="../../js/json2.js"></script>
+    <script src="../../js/jsload.js"></script>
+</head>
+<body>
+<script>
+    var url = tgtools.util.url.getURL();
+    var isSSL = false;
+    isSSL = url.indexOf('https') >= 0;
+    url = url.replace("http://", "");
+    url = url.replace("https://", "");
+    var wsstart = "ws";
+    if (isSSL) {
+        wsstart = "wss";
+    }
+    var wsTextUrl = wsstart + "://" + url + "/myrest/amqptest";
+    var ws = null;
+    var wstext = null;
+    var username= "admin";
+    var postdata = {"password": "1", "username": "admin"};
+    token = tgtools.net.postAjaxData("../../client/gettoken", postdata);
+    var data={"say": "im tg"};
+    var notifyClient = new NotifyWebSocket(wsTextUrl);
+    //订阅数据 hello 通道的信息
+    notifyClient.subscribe("hello",function (data) {
+        alert(data);
+    });
+
+    //发送 data 数据到 helloword 处理器中
+    setTimeout(function () {
+        notifyClient.sendNotify(username,token,"helloword",data);
+        sendUserNotify();
+    }, 2000);
+    function sendUserNotify()
+    {
+        setTimeout(function () {
+            notifyClient.sendNotify(username,token,"userNotify",data);
+        }, 2000);
+    }
+
+</script>
+</body>
+</html>
