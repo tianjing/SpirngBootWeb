@@ -7,8 +7,8 @@
     <artifactId>SpirngBootWeb</artifactId>
     <version>1.0.0</version>
     <modules>
-        <module>tgtools-web-parent</module>
         <module>example-empty-parent</module>
+        <module>tgtools-web-parent</module>
     </modules>
     <!--<modules>-->
         <!--<module>DevService/testservice</module>-->
