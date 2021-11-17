@@ -8,3 +8,5 @@ spring.servlet.multipart.max-file-size: 900MB
 spring.servlet.multipart.max-request-size: 900MB
 spring.application.name: teamfour-elasticsearch-client-test1
 eureka.instance.prefer-ip-address: true
+
+spring.profiles.active: dev

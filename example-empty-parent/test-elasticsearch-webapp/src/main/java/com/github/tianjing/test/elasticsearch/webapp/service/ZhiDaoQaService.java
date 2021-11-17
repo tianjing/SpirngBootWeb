@@ -41,6 +41,7 @@ public class ZhiDaoQaService {
             ZhiDaoQaDO vRow = tgtools.util.JsonParseHelper.parseToObject(vRowContent, ZhiDaoQaDO.class, false);
             //vRow.setId(GUID.newGUID());
             data.add(vRow);
+
         }
 
         TaskRunner vRuner = new TaskRunner();

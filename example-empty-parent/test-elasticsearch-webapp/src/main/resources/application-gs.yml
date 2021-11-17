@@ -10,4 +10,4 @@ app.login-page: /admin/login.html
 #app.resource-path-ext: /ress/**
 app.resource-path: /**
 
-spring.elasticsearch.rest.uris: http://192.168.1.131:9200
+spring.elasticsearch.rest.uris: http://192.168.1.245:29200/

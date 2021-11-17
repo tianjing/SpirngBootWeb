@@ -2,6 +2,7 @@ package com.github.tianjing.test.elasticsearch.webapp.service;
 
 import com.github.tianjing.test.elasticsearch.webapp.dao.NoticeInfoDao;
 import com.github.tianjing.test.elasticsearch.webapp.model.NoticeFileDO;
+import com.github.tianjing.test.elasticsearch.webapp.model.NoticeInfoDO;
 import com.github.tianjing.test.elasticsearch.webapp.model.NoticeUserDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,11 +23,10 @@ public class NoticeInfoService {
 
     public void testAdd() {
         for (int i = 0; i < 10000; i++) {
-            // NoticeInfoDO vNoticeInfoDO = new NoticeInfoDO(String.valueOf(i),(long)i,
-            //          String.valueOf(i), String.valueOf(i));
-            //vNoticeInfoDO.setUsers(buildUsers());
-            //vNoticeInfoDO.setFiles(buildFiles());
-            // noticeInfoDao.save(vNoticeInfoDO);
+             NoticeInfoDO vNoticeInfoDO = new NoticeInfoDO(String.valueOf(i),(long)i,
+                      String.valueOf(i), String.valueOf(i));
+             noticeInfoDao.save(vNoticeInfoDO);
+            noticeInfoDao.save(vNoticeInfoDO);
             System.out.println("");
         }
 
