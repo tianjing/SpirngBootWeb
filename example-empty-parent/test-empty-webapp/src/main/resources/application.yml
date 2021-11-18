@@ -14,5 +14,5 @@ app.use-auto-login: true
 app.security-auto-login-use: true
 server:
   servlet:
-    context-path: /test-empty-webapp
+    context-path: /
 server.port: 8080

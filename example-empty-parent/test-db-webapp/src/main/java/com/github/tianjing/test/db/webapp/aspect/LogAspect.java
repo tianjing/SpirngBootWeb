@@ -1,4 +1,4 @@
-package com.github.tianjing.example.empty.webapp.demo.aspect;
+package com.github.tianjing.test.db.webapp.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;

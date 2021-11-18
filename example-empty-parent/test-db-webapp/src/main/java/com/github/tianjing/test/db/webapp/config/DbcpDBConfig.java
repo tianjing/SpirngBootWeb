@@ -1,4 +1,4 @@
-package com.github.tianjing.example.empty.webapp.config;
+package com.github.tianjing.test.db.webapp.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.plugin.Interceptor;

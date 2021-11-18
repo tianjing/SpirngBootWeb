@@ -1,4 +1,4 @@
-package com.github.tianjing.example.empty.webapp.demo.mybatis.db2;
+package com.github.tianjing.test.db.webapp.mybatis.db2;
 
 
 import tk.mybatis.mapper.common.Mapper;

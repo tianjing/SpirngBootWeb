@@ -1,4 +1,4 @@
-package com.github.tianjing.example.empty.webapp.demo.mybatis.db1;
+package com.github.tianjing.test.db.webapp.mybatis.db1;
 
 
 import org.apache.ibatis.annotations.SelectProvider;

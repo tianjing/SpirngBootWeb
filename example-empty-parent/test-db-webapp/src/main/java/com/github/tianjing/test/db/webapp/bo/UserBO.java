@@ -1,8 +1,8 @@
-package com.github.tianjing.example.empty.webapp.demo.bo;
+package com.github.tianjing.test.db.webapp.bo;
 
 
 
-import com.github.tianjing.example.empty.webapp.demo.mybatis.db1.MyUserDO;
+import com.github.tianjing.test.db.webapp.mybatis.db1.MyUserDO;
 
 import java.util.Set;
 

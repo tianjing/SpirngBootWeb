@@ -1,11 +1,10 @@
-package com.github.tianjing.example.empty.webapp.demo.gateway;
+package com.github.tianjing.test.db.webapp.controller;
 
-import com.github.tianjing.example.empty.webapp.demo.mybatis.db1.MyUserDao;
-import com.github.tianjing.example.empty.webapp.demo.mybatis.db2.UserDao;
+import com.github.tianjing.test.db.webapp.mybatis.db1.MyUserDao;
+import com.github.tianjing.test.db.webapp.mybatis.db2.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -26,14 +25,12 @@ public class UserContoller {
 
 
     @RequestMapping("/list")
-    public void list(HttpServletResponse response)
-    {
+    public void list(HttpServletResponse response) {
         try {
             mDUserDao.selectAll();
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write("田径");
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
