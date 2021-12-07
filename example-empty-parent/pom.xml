@@ -19,6 +19,7 @@
         <module>test-tensorflow-webapp</module>
         <module>test-db-webapp</module>
         <module>test-activiti-webapp</module>
+        <module>test-minio-webapp</module>
     </modules>
 
     <properties>
