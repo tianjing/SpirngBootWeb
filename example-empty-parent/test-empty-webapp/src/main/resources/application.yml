@@ -15,4 +15,4 @@ app.security-auto-login-use: true
 server:
   servlet:
     context-path: /
-server.port: 8080
+server.port: 1340

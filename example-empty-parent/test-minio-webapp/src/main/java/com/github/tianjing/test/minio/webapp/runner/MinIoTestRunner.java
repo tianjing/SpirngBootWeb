@@ -21,15 +21,16 @@ public class MinIoTestRunner implements ApplicationRunner {
     private static final String fileName = "test.txt";
 
 
-    @Autowired
-    private MinioClient minioClient;
-
     @Override
     public void run(ApplicationArguments args) throws Exception {
         saveFile();
         getFile();
-        deleteFile();
+        //deleteFile();
     }
+
+
+    @Autowired
+    private MinioClient minioClient;
 
     protected void saveFile() {
         String file = "C:\\tianjing\\github\\SpirngBootWeb\\example-empty-parent\\test-minio-webapp\\src\\main\\resources\\test\\test.txt";
