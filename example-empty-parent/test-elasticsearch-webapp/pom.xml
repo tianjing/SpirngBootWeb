@@ -42,6 +42,13 @@
             <version>7.8.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.noear/esearchx -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>esearchx</artifactId>
+            <version>1.0.10</version>
+        </dependency>
+
     </dependencies>
 
     <build>

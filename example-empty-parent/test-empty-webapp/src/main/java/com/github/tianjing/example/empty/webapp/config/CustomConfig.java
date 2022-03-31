@@ -11,7 +11,6 @@ import java.util.Map;
 public class CustomConfig {
 
     @Qualifier
-
     @Autowired
     protected ApplicationContext applicationContext;
 

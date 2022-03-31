@@ -18,6 +18,12 @@ public class Test2Controller {
         throw new Exception("test2");
     }
 
+    /**
+     * 添加测试
+     * @param file
+     * @param imageInfo
+     * @return
+     */
     @PostMapping("upload")
     public ObjectNode upload(@RequestPart("file") MultipartFile file, @RequestPart("imageInfo") ObjectNode imageInfo) {
         System.out.println(imageInfo);

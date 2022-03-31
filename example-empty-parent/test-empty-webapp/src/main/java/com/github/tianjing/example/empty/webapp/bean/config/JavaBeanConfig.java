@@ -1,6 +1,8 @@
 package com.github.tianjing.example.empty.webapp.bean.config;
 
+import com.github.tianjing.example.empty.webapp.config.TgtoolsConfig;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,6 +10,9 @@ import javax.annotation.PostConstruct;
 
 @Configuration
 public class JavaBeanConfig implements InitializingBean {
+    @Autowired
+    TgtoolsConfig tgtoolsConfig;
+
     @Override
     public void afterPropertiesSet() throws Exception {
         //two
@@ -27,6 +32,9 @@ public class JavaBeanConfig implements InitializingBean {
 
 
     public static class MyClass implements InitializingBean {
+        @Autowired
+        TgtoolsConfig tgtoolsConfig;
+
         public void init() {
             System.out.println("MyClass init");
         }
