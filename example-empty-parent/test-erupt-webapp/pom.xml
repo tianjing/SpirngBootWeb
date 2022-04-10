@@ -44,5 +44,27 @@
             <version>8.0.16</version>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- 达梦支持 开始-->
+        <!-- https://mvnrepository.com/artifact/com.dameng/DmDialect-for-hibernate5.3 -->
+        <dependency>
+            <groupId>com.dameng</groupId>
+            <artifactId>DmDialect-for-hibernate5.3</artifactId>
+            <version>7.6.0.165</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.dameng/Dm7JdbcDriver18 -->
+        <dependency>
+            <groupId>com.dameng</groupId>
+            <artifactId>Dm7JdbcDriver18</artifactId>
+            <version>7.6.0.165</version>
+        </dependency>
+        <dependency>
+            <!--注意：只有这个版本的hibernate兼容达梦数据库 -->
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.3.18.Final</version>
+        </dependency>
+        <!-- 达梦支持 结束 -->
     </dependencies>
 </project>
