@@ -23,6 +23,9 @@
         <module>test-db-webapp</module>
         <module>test-activiti-webapp</module>
         <module>test-minio-webapp</module>
+        <module>test-flink-webapp</module>
+        <module>test-hbase-webapp</module>
+        <module>test-erupt-webapp</module>
     </modules>
 
     <properties>
@@ -39,4 +42,11 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>apache release</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
 </project>
