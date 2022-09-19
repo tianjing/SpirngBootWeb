@@ -9,6 +9,7 @@ public class TestPhoenix {
     private static String driver = "org.apache.phoenix.jdbc.PhoenixDriver";
 
     public static void main(String[] args) throws Exception {
+
         Connection vConnection = createConnection();
         System.out.println(vConnection);
     }

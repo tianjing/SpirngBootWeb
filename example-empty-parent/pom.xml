@@ -26,6 +26,7 @@
         <module>test-flink-webapp</module>
         <module>test-hbase-webapp</module>
         <module>test-erupt-webapp</module>
+        <module>test-alibaba-webapp</module>
     </modules>
 
     <properties>
