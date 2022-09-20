@@ -35,7 +35,7 @@
         <dependency>
             <groupId>com.github.tianjing</groupId>
             <artifactId>spring-data-tablestore-in-togetu-module</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>2.3.4.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.google.protobuf</groupId>
