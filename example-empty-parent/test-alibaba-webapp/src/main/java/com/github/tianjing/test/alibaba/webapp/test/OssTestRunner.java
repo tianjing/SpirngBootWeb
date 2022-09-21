@@ -16,6 +16,7 @@ public class OssTestRunner implements ApplicationRunner {
     private OssFileTemplate ossFileTemplate;
 
 
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         List<OSSObjectSummary> vFiles = ossFileTemplate.list("t");
