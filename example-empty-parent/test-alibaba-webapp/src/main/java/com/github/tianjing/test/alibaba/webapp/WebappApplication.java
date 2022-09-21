@@ -1,5 +1,7 @@
 package com.github.tianjing.test.alibaba.webapp;
 
+import com.github.tianjing.tgtools.alibaba.oss.config.annotation.TgToolsEnableOssTemplate;
+import in.togetu.tablestore.repository.config.annotation.TgToolsEnableTableStore;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -10,14 +12,12 @@ import tgtools.util.LogHelper;
  * @create 2019-02-13 10:05
  * @desc
  **/
-
+@TgToolsEnableOssTemplate
+@TgToolsEnableTableStore
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class WebappApplication {
 
     public static void main(String[] args) {
-        System.setProperty("http.proxySet", "true");
-        System.setProperty("proxyHost", "127.0.0.1"); // PROXY_HOST：代理的IP地址
-        System.setProperty("proxyPort", "8888"); // PROXY_PORT：代理的端口号
         SpringApplication.run(WebappApplication.class, args);
         LogHelper.info("", "==================================================", "main");
     }

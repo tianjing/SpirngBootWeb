@@ -44,6 +44,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.github.tianjing</groupId>
+            <artifactId>tgtools-alibaba-oss</artifactId>
+            <version>2.3.4.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>

@@ -18,8 +18,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-@Component
-public class TestRunner implements ApplicationRunner {
+//@Component
+public class DataTestRunner implements ApplicationRunner {
 
     @Autowired
     private User2Repository user2Repository;
