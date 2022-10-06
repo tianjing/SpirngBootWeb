@@ -5,6 +5,8 @@ import xyz.erupt.annotation.Erupt;
 import xyz.erupt.annotation.EruptField;
 import xyz.erupt.annotation.sub_field.Edit;
 import xyz.erupt.annotation.sub_field.View;
+import xyz.erupt.annotation.sub_field.sub_edit.Search;
+import xyz.erupt.upms.model.log.EruptOperateLog;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -29,7 +31,7 @@ public class Simple {
     //文本输入
     @EruptField(
             views = @View(title = "文本"),
-            edit = @Edit(title = "文本")
+            edit = @Edit(title = "文本",search = @Search(vague=true))
     )
     private String input;
 

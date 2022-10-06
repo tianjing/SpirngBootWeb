@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import xyz.erupt.core.annotation.EruptScan;
+import xyz.erupt.upms.model.log.EruptOperateLog;
 
 /**
  * @author 田径
@@ -14,7 +15,6 @@ import xyz.erupt.core.annotation.EruptScan;
 @EruptScan
 @SpringBootApplication
 public class WebappApplication {
-
 
     public static void main(String[] args) {
         SpringApplication.run(WebappApplication.class, args);

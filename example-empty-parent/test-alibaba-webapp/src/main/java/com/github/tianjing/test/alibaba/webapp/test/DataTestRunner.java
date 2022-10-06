@@ -1,8 +1,10 @@
 package com.github.tianjing.test.alibaba.webapp.test;
 
 import com.github.tianjing.test.alibaba.webapp.model.User2;
+import com.github.tianjing.test.alibaba.webapp.model.XHistory;
 import com.github.tianjing.test.alibaba.webapp.repository.User2Repository;
 import com.github.tianjing.test.alibaba.webapp.repository.UserRepository;
+import com.github.tianjing.test.alibaba.webapp.repository.XHistoryRepository;
 import in.togetu.tablestore.repository.bean.Key;
 import in.togetu.tablestore.repository.bean.KeyRange;
 import in.togetu.tablestore.repository.bean.TableStorePage;
@@ -18,17 +20,25 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-//@Component
+@Component
 public class DataTestRunner implements ApplicationRunner {
 
     @Autowired
     private User2Repository user2Repository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private XHistoryRepository xHistoryRepository;
+
 
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        Iterable<XHistory> d= xHistoryRepository.findAll();
+        System.out.println("========================");
+    }
+
+    public void run1(ApplicationArguments args) throws Exception {
 
         TableStorePage vPage = new TableStorePage(1, 10);
         vPage.setKeyRange(new KeyRange() {{

@@ -2,6 +2,7 @@ package com.github.tianjing.test.db.webapp.model;
 
 import org.springframework.validation.annotation.Validated;
 
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -10,6 +11,7 @@ import javax.validation.constraints.NotNull;
  * @desc
  **/
 @Validated
+@Table
 public class UserDO {
 
     private String name;

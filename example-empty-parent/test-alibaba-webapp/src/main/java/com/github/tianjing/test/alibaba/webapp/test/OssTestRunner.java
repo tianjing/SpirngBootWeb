@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+//@Component
 public class OssTestRunner implements ApplicationRunner {
 
     @Autowired
