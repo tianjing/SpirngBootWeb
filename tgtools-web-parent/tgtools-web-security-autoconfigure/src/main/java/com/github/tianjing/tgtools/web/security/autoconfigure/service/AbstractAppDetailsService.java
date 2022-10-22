@@ -1,6 +1,7 @@
 package com.github.tianjing.tgtools.web.security.autoconfigure.service;
 
 import com.github.tianjing.tgtools.web.security.autoconfigure.bean.AbstractSysUser;
+import com.github.tianjing.tgtools.web.security.autoconfigure.bean.SysUser;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -20,7 +21,7 @@ public abstract class AbstractAppDetailsService implements UserDetailsAndPasswor
 
     public abstract String getAppName(String pUserName) throws APPErrorException;
 
-    public String[] getRole(AbstractSysUser pAppInfo) throws APPErrorException{
+    public String[] getRole(SysUser pAppInfo) throws APPErrorException{
         return new String[]{"app"};
     }
 

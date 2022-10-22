@@ -1,17 +1,15 @@
 package com.github.tianjing.tgtools.web.security.autoconfigure.util;
 
 
+import com.github.tianjing.tgtools.encrypt.EncrypterFactory;
 import com.github.tianjing.tgtools.encrypt.spring.security.DelegatingEncrypter;
-import com.github.tianjing.tgtools.encrypt.spring.security.PasswordEncoderFactory;
 import com.github.tianjing.tgtools.web.security.autoconfigure.bean.AbstractSysUser;
+import com.github.tianjing.tgtools.web.security.autoconfigure.bean.SysUser;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
-import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -19,8 +17,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author 田径
@@ -37,7 +33,7 @@ public class TeamDevelopSecurityHelper {
      *
      * @return
      */
-    public static AbstractSysUser getCurrentUser() {
+    public static SysUser getCurrentUser() {
         return getDetails();
     }
 
@@ -104,7 +100,7 @@ public class TeamDevelopSecurityHelper {
      *
      * @param pSysUser
      */
-    public static void userLogin(AbstractSysUser pSysUser) {
+    public static void userLogin(SysUser pSysUser) {
         UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(pSysUser.getFirst(), pSysUser.getPwd());
         authRequest.setDetails(pSysUser);
         getAuthenticationManager().authenticate(authRequest);
@@ -192,28 +188,28 @@ public class TeamDevelopSecurityHelper {
 
 
     public static DelegatingEncrypter getDelegatingEncrypter(String pDefaultEncodeId, String pPassword) {
-        Map<String, PasswordEncoder> vPasswordEncoders = new HashMap<>(20);
-        vPasswordEncoders.put("noop", org.springframework.security.crypto.password.NoOpPasswordEncoder.getInstance());
-        //hash加密器
-        vPasswordEncoders.put("md5", PasswordEncoderFactory.newMd5Encrypter());
-        vPasswordEncoders.put("MD5", vPasswordEncoders.get("md5"));
+//        Map<String, PasswordEncoder> vPasswordEncoders = new HashMap<>(20);
+//        vPasswordEncoders.put("noop", org.springframework.security.crypto.password.NoOpPasswordEncoder.getInstance());
+//        //hash加密器
+//        vPasswordEncoders.put("md5", PasswordEncoderFactory.newMd5Encrypter());
+//        vPasswordEncoders.put("MD5", vPasswordEncoders.get("md5"));
+//
+//        vPasswordEncoders.put("SHA-1", new org.springframework.security.crypto.password.MessageDigestPasswordEncoder("SHA-1"));
+//        vPasswordEncoders.put("SHA-256", new org.springframework.security.crypto.password.MessageDigestPasswordEncoder("SHA-256"));
+//        vPasswordEncoders.put("sha256", new org.springframework.security.crypto.password.StandardPasswordEncoder());
+//        vPasswordEncoders.put("pbkdf2", new Pbkdf2PasswordEncoder());
+//        vPasswordEncoders.put("scrypt", new SCryptPasswordEncoder());
+//
+//        //对称加密器
+//        vPasswordEncoders.put("des", PasswordEncoderFactory.newDesNoModeNoPaddingEncrypter());
+//        vPasswordEncoders.put("desa", PasswordEncoderFactory.newDesSaltNoModeNoPaddingEncrypter());
+//        vPasswordEncoders.put("sm4c", PasswordEncoderFactory.newSm4CbcEncrypter());
+//        vPasswordEncoders.put("sm4e", PasswordEncoderFactory.newSm4EcbEncrypter());
+//
+//        DelegatingEncrypter vDelegatingPasswordEncoder = new DelegatingEncrypter(pDefaultEncodeId, vPasswordEncoders);
+//        vDelegatingPasswordEncoder.setKey(pPassword);
 
-        vPasswordEncoders.put("SHA-1", new org.springframework.security.crypto.password.MessageDigestPasswordEncoder("SHA-1"));
-        vPasswordEncoders.put("SHA-256", new org.springframework.security.crypto.password.MessageDigestPasswordEncoder("SHA-256"));
-        vPasswordEncoders.put("sha256", new org.springframework.security.crypto.password.StandardPasswordEncoder());
-        vPasswordEncoders.put("pbkdf2", new Pbkdf2PasswordEncoder());
-        vPasswordEncoders.put("scrypt", new SCryptPasswordEncoder());
-
-        //对称加密器
-        vPasswordEncoders.put("des", PasswordEncoderFactory.newDesNoModeNoPaddingEncrypter());
-        vPasswordEncoders.put("desa", PasswordEncoderFactory.newDesSaltNoModeNoPaddingEncrypter());
-        vPasswordEncoders.put("sm4c", PasswordEncoderFactory.newSm4CbcEncrypter());
-        vPasswordEncoders.put("sm4e", PasswordEncoderFactory.newSm4EcbEncrypter());
-
-        DelegatingEncrypter vDelegatingPasswordEncoder = new DelegatingEncrypter(pDefaultEncodeId, vPasswordEncoders);
-        vDelegatingPasswordEncoder.setKey(pPassword);
-
-        return vDelegatingPasswordEncoder;
+        return EncrypterFactory.createDelegatingEncrypter(pDefaultEncodeId, pPassword);
     }
 
 }

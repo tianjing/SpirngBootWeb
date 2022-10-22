@@ -2,6 +2,7 @@ package com.github.tianjing.tgtools.web.security.autoconfigure.service;
 
 import com.github.tianjing.tgtools.encrypt.spring.security.DelegatingEncrypter;
 import com.github.tianjing.tgtools.web.security.autoconfigure.bean.AbstractSysUser;
+import com.github.tianjing.tgtools.web.security.autoconfigure.bean.SysUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -32,7 +33,7 @@ public abstract class AbstractUserDetailsService implements UserDetailsAndPasswo
      * @return
      * @throws APPErrorException
      */
-    public abstract AbstractSysUser getUser(String pUserName) throws APPErrorException;
+    public abstract SysUser getUser(String pUserName) throws APPErrorException;
 
     /**
      * 获取用户角色
@@ -41,7 +42,7 @@ public abstract class AbstractUserDetailsService implements UserDetailsAndPasswo
      * @return
      * @throws APPErrorException
      */
-    public abstract String[] getRole(AbstractSysUser pUser) throws APPErrorException;
+    public abstract String[] getRole(SysUser pUser) throws APPErrorException;
 
     /**
      * 获取用户权限
@@ -50,9 +51,9 @@ public abstract class AbstractUserDetailsService implements UserDetailsAndPasswo
      * @return
      * @throws APPErrorException
      */
-    public abstract List<String> getUserAuthority(AbstractSysUser pUser) throws APPErrorException;
+    public abstract List<String> getUserAuthority(SysUser pUser) throws APPErrorException;
 
-    public List<SimpleGrantedAuthority> getAuthority(AbstractSysUser pUser) throws APPErrorException {
+    public List<SimpleGrantedAuthority> getAuthority(SysUser pUser) throws APPErrorException {
         ArrayList<SimpleGrantedAuthority> vResult = new ArrayList<>();
         List<String> vMenuPerms = getUserAuthority(pUser);
         if (null == vMenuPerms || vMenuPerms.size() < 1) {
@@ -88,7 +89,7 @@ public abstract class AbstractUserDetailsService implements UserDetailsAndPasswo
     @Override
     public UserDetails loadUserByUsername(String pUserName) throws UsernameNotFoundException {
         try {
-            AbstractSysUser vSysUserDO = getUser(pUserName);
+            SysUser vSysUserDO = getUser(pUserName);
             String vEncodeId = null;
             if ((encoder instanceof DelegatingEncrypter) && StringUtil.isNotEmpty(vSysUserDO.getPwd())) {
                 vEncodeId = ((DelegatingEncrypter) encoder).extractId(vSysUserDO.getPwd());
@@ -106,7 +107,7 @@ public abstract class AbstractUserDetailsService implements UserDetailsAndPasswo
         return null;
     }
 
-    protected List<GrantedAuthority> getAllRoleAndAuthorize(AbstractSysUser pSysUserDO) throws APPErrorException {
+    protected List<GrantedAuthority> getAllRoleAndAuthorize(SysUser pSysUserDO) throws APPErrorException {
         UserDetails vUserRole = User.builder().username(pSysUserDO.getFirst()).password(pSysUserDO.getPwd()).roles(getRole(pSysUserDO)).build();
         UserDetails vUserAuthorize = User.builder().username(pSysUserDO.getFirst()).password(pSysUserDO.getPwd()).authorities(getAuthority(pSysUserDO)).build();
         List<GrantedAuthority> vAuthorizes = new ArrayList<>();

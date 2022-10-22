@@ -1,7 +1,7 @@
 package com.github.tianjing.tgtools.web.security.autoconfigure.bean;
 
 
-public class AbstractSysUser {
+public class AbstractSysUser implements SysUser{
     private String id;
     private String first;
     private String last;
