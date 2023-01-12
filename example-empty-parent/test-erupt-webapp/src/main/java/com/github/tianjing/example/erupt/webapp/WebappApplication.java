@@ -15,7 +15,6 @@ import xyz.erupt.upms.model.log.EruptOperateLog;
 @EruptScan
 @SpringBootApplication
 public class WebappApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(WebappApplication.class, args);
     }

@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.transaction.annotation.Transactional;
 import tgtools.net.WebClient;
 import tgtools.tasks.Task;
@@ -32,7 +33,6 @@ public class WebappApplication {
 
     public static void main(String[] args) throws JsonProcessingException {
         User vUser = new ObjectMapper().readValue("{\"name\":\"0xe70xad0xbe\"}",User.class);
-
         SpringApplication.run(WebappApplication.class, args);
         LogHelper.info("", "==================================================", "main");
         for (int i = 0; i < 20; i++) {
